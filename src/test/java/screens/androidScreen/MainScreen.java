@@ -8,8 +8,8 @@ import utils.Driver;
 
 import java.time.Duration;
 
-public class AnaScreen {
-    AnaScreen(){
+public class MainScreen {
+    public MainScreen(){
         PageFactory.initElements(new AppiumFieldDecorator(Driver.getAppiumDriver(), Duration.ofSeconds(30)),this);
     }
 
@@ -19,5 +19,13 @@ public class AnaScreen {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='API Demos']")
     public MobileElement apiDemosButton;
 
+    public boolean isMainScreenDisplayed() {
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return mainScreenTitle.isDisplayed();
+    }
 
 }

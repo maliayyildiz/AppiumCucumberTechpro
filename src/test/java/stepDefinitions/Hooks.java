@@ -31,7 +31,6 @@ public class Hooks {
         }
         Driver.quitAppiumDriver();
         appiumServer.stop();
-
     }
 
     public void forceStopAppiumServer() {
