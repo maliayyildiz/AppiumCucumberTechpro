@@ -77,4 +77,6 @@ public class ApiDemosSteps {
     public void kullanciOkButonunaTikladi() {
         preferenceDependenciesScreen.okButton.click();
     }
+
+
 }
