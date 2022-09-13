@@ -9,8 +9,9 @@ import screens.androidScreen.MainScreen;
 import screens.androidScreen.PreferenceDependenciesScreen;
 import screens.androidScreen.PreferenceScreen;
 import utils.Driver;
+import utils.ReusableMethods;
 
-public class ApiDemosSteps {
+public class ApiDemosSteps extends ReusableMethods {
     MainScreen mainScreen =  new MainScreen();
     ApiDemosScreen apiDemosScreen = new ApiDemosScreen();
     PreferenceScreen preferenceScreen = new PreferenceScreen();
@@ -23,12 +24,12 @@ public class ApiDemosSteps {
 
     @And("kullanici ana ekranda")
     public void kullaniciAnaEkranda() {
-        Assert.assertTrue(mainScreen.isMainScreenDisplayed());
+        Assert.assertTrue(isElementPresent(mainScreen.mainScreenTitle));
     }
 
     @And("kullanici API Demos butununa tikladi")
     public void kullaniciAPIDemosButununaTikladi() {
-        mainScreen.apiDemosButton.click();
+        tapOn(mainScreen.apiDemosButton);
     }
 
     @Then("kullanici API Demos ekraninda")
