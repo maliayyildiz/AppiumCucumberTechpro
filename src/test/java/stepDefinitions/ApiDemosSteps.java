@@ -4,17 +4,12 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import screens.androidScreen.ApiDemosScreen;
-import screens.androidScreen.MainScreen;
-import screens.androidScreen.PreferenceDependenciesScreen;
-import screens.androidScreen.PreferenceScreen;
+import screens.Screens;
 import utils.Driver;
+import utils.ReusableMethods;
 
-public class ApiDemosSteps {
-    MainScreen mainScreen =  new MainScreen();
-    ApiDemosScreen apiDemosScreen = new ApiDemosScreen();
-    PreferenceScreen preferenceScreen = new PreferenceScreen();
-    PreferenceDependenciesScreen preferenceDependenciesScreen = new PreferenceDependenciesScreen();
+public class ApiDemosSteps extends ReusableMethods{
+    Screens screens = new Screens();
 
     @Given("App yuklensin")
     public void app_yuklensin() {
@@ -23,59 +18,59 @@ public class ApiDemosSteps {
 
     @And("kullanici ana ekranda")
     public void kullaniciAnaEkranda() {
-        Assert.assertTrue(mainScreen.isMainScreenDisplayed());
+        Assert.assertTrue(isElementPresent(screens.mainScreen().mainScreenTitle));
     }
 
     @And("kullanici API Demos butununa tikladi")
     public void kullaniciAPIDemosButununaTikladi() {
-        mainScreen.apiDemosButton.click();
+        tapOn(screens.mainScreen().apiDemosButton);
     }
 
     @Then("kullanici API Demos ekraninda")
     public void kullaniciAPIDemosEkraninda() {
-        Assert.assertTrue(apiDemosScreen.isApiDemosDisplayed());
+        Assert.assertTrue(isElementPresent(screens.apiDemosScreen().apiDemosTitle));
     }
 
     @And("kullanici Preference butununa tikladi")
     public void kullaniciPreferenceButununaTikladi() {
-        apiDemosScreen.preference.click();
+        tapOn(screens.apiDemosScreen().preference);
     }
 
     @Then("kullanici Preference ekraninda")
     public void kullaniciPreferenceEkraninda() {
-        Assert.assertTrue(preferenceScreen.isPreferenceScreenDisplayed());
+        Assert.assertTrue(isElementPresent(screens.preferenceScreen().preferenceScreenTitle));
     }
 
     @And("kullanici Preference dependencies tikladi")
     public void kullaniciPreferenceDependenciesTikladi() {
-        preferenceScreen.preferenceDependencies.click();
+        tapOn(screens.preferenceScreen().preferenceDependencies);
     }
 
     @And("kullanici WiFi check box secmis olacak")
     public void kullaniciWiFiCheckBoxSecmisOlacak() {
-       if (preferenceDependenciesScreen.checkBox.getAttribute("checked").equals("false")){
-           preferenceDependenciesScreen.checkBox.click();
+       if (screens.preferenceDependenciesScreen().checkBox.getAttribute("checked").equals("false")){
+           tapOn(screens.preferenceDependenciesScreen().checkBox);
        }
     }
 
     @And("kullanici WiFi Settings tikladi")
     public void kullaniciWiFiSettingsTikladi() {
-        preferenceDependenciesScreen.wifiSettings.click();
+        tapOn(screens.preferenceDependenciesScreen().wifiSettings);
     }
 
     @Then("WiFi setting popup geldi")
     public void wifiSettingPopupGeldi() {
-        Assert.assertTrue(preferenceDependenciesScreen.cancelButton.isDisplayed());
+        Assert.assertTrue(isElementPresent(screens.preferenceDependenciesScreen().cancelButton));
     }
 
     @And("kullanici {string} yazdi")
     public void kullaniciYazdi(String text) {
-        preferenceDependenciesScreen.textBox.sendKeys(text);
+        enterText(screens.preferenceDependenciesScreen().textBox, text);
     }
 
     @And("kullanci ok butonuna tikladi")
     public void kullanciOkButonunaTikladi() {
-        preferenceDependenciesScreen.okButton.click();
+        tapOn(screens.preferenceDependenciesScreen().okButton);
     }
 
 
