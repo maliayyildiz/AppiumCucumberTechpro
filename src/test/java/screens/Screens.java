@@ -1,9 +1,6 @@
 package screens;
 
-import screens.androidScreen.ApiDemosScreen;
-import screens.androidScreen.MainScreen;
-import screens.androidScreen.PreferenceDependenciesScreen;
-import screens.androidScreen.PreferenceScreen;
+import screens.androidScreen.*;
 
 public class Screens {
     public Screens() {
@@ -12,6 +9,39 @@ public class Screens {
     private MainScreen mainScreen;
     private PreferenceScreen preferenceScreen;
     private PreferenceDependenciesScreen preferenceDependenciesScreen;
+    private SwitchScreen switchScreen;
+    private ViewsScreen viewsScreen;
+    private DragAndDropScreen dragAndDropScreen;
+    private DateWidgetsScreen dateWidgetsScreen;
+
+    public DateWidgetsScreen dateWidgetsScreen(){
+        if (dateWidgetsScreen == null){
+            dateWidgetsScreen = new DateWidgetsScreen();
+        }
+        return dateWidgetsScreen;
+    }
+
+    public DragAndDropScreen dragAndDropScreen(){
+        if (dragAndDropScreen == null){
+            dragAndDropScreen = new DragAndDropScreen();
+        }
+        return dragAndDropScreen;
+    }
+
+    public ViewsScreen viewsScreen(){
+        if (viewsScreen == null) {
+            viewsScreen = new ViewsScreen();
+        }
+        return viewsScreen;
+    }
+
+    public SwitchScreen switchScreen(){
+        if (switchScreen == null){
+            switchScreen = new SwitchScreen();
+        }
+        return switchScreen;
+    }
+
 
     public ApiDemosScreen apiDemosScreen() {
         if (apiDemosScreen == null) {
