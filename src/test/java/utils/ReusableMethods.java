@@ -62,6 +62,6 @@ public class ReusableMethods {
     public static void swipeFromElementToElement(MobileElement el1, MobileElement el2) {
 
     }
-
+//attrubute check
 
 }
