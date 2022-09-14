@@ -6,5 +6,5 @@ Feature: apidemos
     And   api demos tiklanir
     When  acilan ekrandan preferance tiklanir
     And   preferance depency tiklanir
-    Given checkbox "false" olmalidir
+    Given checkbox "true" olmalidir
 

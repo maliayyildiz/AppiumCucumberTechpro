@@ -27,7 +27,10 @@ public class PreferanceDepencyScreen extends PreferanceScreen {
        }else if(value.equals("false")&&actual.equals("true")){
            driver.findElement(wifi_text_button).click();
 
+       }else{
+           System.out.println("checkbox statüsü degişmedi");
        }
+
 
     }
 

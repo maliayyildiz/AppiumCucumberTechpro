@@ -19,25 +19,27 @@ public class denemeSteps extends PreferanceDepencyScreen {
 
     @And("api demos tiklanir")
     public void apiDemosTiklanir() {
-        wait(3000);
+
         apiDemosButton_click();
     }
 
     @When("acilan ekrandan preferance tiklanir")
     public void acilanEkrandanPreferanceTiklanir() {
-        wait(3000);
+
+        wait(3);
         preferanceButon_click();
     }
 
     @And("preferance depency tiklanir")
     public void preferanceDepencyTiklanir() {
-        wait(3000);
+
         preferanceDepencyButton_click();
     }
 
     @Given("checkbox {string} olmalidir")
     public void checkboxOlmalidir(String value) {
-        wifiCheckBoxButton_click("false");
+
+        wifiCheckBoxButton_click(value);
     }
     public void wait(int second){
         try {

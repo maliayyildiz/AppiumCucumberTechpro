@@ -18,28 +18,28 @@ public class Hooks {
     @Before
     public void setUp(){
         //it starts appium server
-        forceStopAppiumServer();
+      //   forceStopAppiumServer();
 
-        appiumServer.start();
+      //  appiumServer.start();
 
     }
     @After
     public void tearDown(Scenario scenario){
-        final byte[] screenshot=((TakesScreenshot) Driver.getAppiumDriver()).getScreenshotAs(OutputType.BYTES);
-        if (scenario.isFailed()) {
-            scenario.attach(screenshot, "image/png","screenshots");
-        }
-        Driver.quitAppiumDriver();
-        appiumServer.stop();
+    //   final byte[] screenshot=((TakesScreenshot) Driver.getAppiumDriver()).getScreenshotAs(OutputType.BYTES);
+    //   if (scenario.isFailed()) {
+    //       scenario.attach(screenshot, "image/png","screenshots");
+    //   }
+    //   Driver.quitAppiumDriver();
+       // appiumServer.stop();
     }
 
-    public void forceStopAppiumServer() {
-        try {
-            runtime.exec("killall node");
-            runtime.exec("pkill  -i xcodebuild");
-            System.out.println("Kill all nodes");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+  //  public void forceStopAppiumServer() {
+  ///      try {
+  ///          runtime.exec("killall node");
+  ///          runtime.exec("pkill  -i xcodebuild");
+  ///          System.out.println("Kill all nodes");
+  ///      } catch (IOException e) {
+  ///          e.printStackTrace();
+  ///      }
+  ///  }
 }
