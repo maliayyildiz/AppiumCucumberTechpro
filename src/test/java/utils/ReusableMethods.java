@@ -12,7 +12,7 @@ import java.util.List;
 public class ReusableMethods {
 
     public static void tapOnElementWithText(String text) {
-        wait(5000);
+       // wait(5000);
         List<MobileElement> mobileElementList = Driver.getAppiumDriver().findElementsByXPath("//android.widget.TextView[@text='" + text + "']");
         for (MobileElement element : mobileElementList) {
             if (element.getText().equals(text)) {

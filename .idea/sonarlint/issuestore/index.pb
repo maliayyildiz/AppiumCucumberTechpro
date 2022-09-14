@@ -9,7 +9,5 @@ i
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 _
 /src/test/resources/features/HazirMethod.feature,1\1\117862ca57a794de595c180a0713e60a73b78814
-X
-(src/test/java/utils/ReusableMethods.java,0\a\0a04abab415dc6307b07acf039f856f52953da21
 g
 7src/test/java/screens/androidScreen/ApiDemosScreen.java,8\5\85e3b52c5e1c8acecae36fc30a0f91473c2f7d56

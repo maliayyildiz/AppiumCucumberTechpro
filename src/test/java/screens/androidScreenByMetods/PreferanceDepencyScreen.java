@@ -21,7 +21,7 @@ public class PreferanceDepencyScreen extends PreferanceScreen {
 
     public void wifiCheckBoxButton_click(String value){
         wait(3);
-       String actual= driver.findElement(wifi_text_button).getAttribute("checked");
+       String actual= driver.findElement(wifi_checkbox_button).getAttribute("checked");
        if (value.equals("true")&&actual.equals("false")){
            driver.findElement(wifi_text_button).click();
        }else if(value.equals("false")&&actual.equals("true")){

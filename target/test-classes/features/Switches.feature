@@ -7,7 +7,7 @@
       Then kullanici "API Demos" ekraninda
       And kullanici "Preference" butununa tikladi
       Then kullanici "Preference" ekraninda
-      And kullanici "Switches" butununa tikladi
+      And kullanici "9. Switch" butununa tikladi
 
     Scenario: Switch test
       And kullanici check box tikladi

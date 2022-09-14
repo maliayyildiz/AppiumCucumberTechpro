@@ -15,4 +15,4 @@
       And kullanici "Switches" button tiklasin
 
     Scenario: scroll with reusable method
-      And kullanici "Switches" butununa tikladi
+      And kullanici "Switches" butuntikladi
