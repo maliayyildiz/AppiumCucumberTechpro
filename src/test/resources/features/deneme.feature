@@ -1,6 +1,6 @@
 Feature: apidemos
 
-  @now1
+   @now11
   Scenario: api Demos
     Given app acilir
     And   api demos tiklanir

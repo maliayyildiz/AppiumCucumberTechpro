@@ -19,13 +19,4 @@ public class MainScreen {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='API Demos']")
     public MobileElement apiDemosButton;
 
-    public boolean isMainScreenDisplayed() {
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return mainScreenTitle.isDisplayed();
-    }
-
 }

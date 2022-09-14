@@ -7,8 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import utils.Driver;
 
 public class PreferenceScreen {
-    public PreferenceScreen(){
-        PageFactory.initElements(new AppiumFieldDecorator(Driver.getAppiumDriver()),this);
+    public PreferenceScreen() {
+        PageFactory.initElements(new AppiumFieldDecorator(Driver.getAppiumDriver()), this);
     }
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Preference']")
@@ -18,6 +18,7 @@ public class PreferenceScreen {
     public MobileElement preferenceDependencies;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='9. Switch']")
+
     public MobileElement switchButon;
 
     public boolean isPreferenceScreenDisplayed() {
