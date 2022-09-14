@@ -1,4 +1,4 @@
 package stepDefinitions;
 
-public class deneme {
+public class swtiches {
 }

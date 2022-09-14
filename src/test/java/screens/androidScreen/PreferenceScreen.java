@@ -17,6 +17,9 @@ public class PreferenceScreen {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='3. Preference dependencies']")
     public MobileElement preferenceDependencies;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='9. Switch']")
+    public MobileElement switchButon;
+
     public boolean isPreferenceScreenDisplayed() {
         try {
             Thread.sleep(4000);
