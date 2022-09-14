@@ -6,6 +6,8 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 import utils.Driver;
 
+import java.util.List;
+
 public class ViewsScreen {
     public ViewsScreen(){
         PageFactory.initElements(new AppiumFieldDecorator(Driver.getAppiumDriver()),this);
@@ -15,5 +17,8 @@ public class ViewsScreen {
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Drag and Drop']")
     public MobileElement dragDropButton;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Switches']")
+    public List<MobileElement> switchesButton;
 
 }

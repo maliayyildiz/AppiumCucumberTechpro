@@ -2,6 +2,7 @@ package utils;
 
 
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -11,12 +12,17 @@ import java.util.List;
 public class ReusableMethods {
 
     public static void tapOnElementWithText(String text) {
+        wait(5000);
         List<MobileElement> mobileElementList = Driver.getAppiumDriver().findElementsByXPath("//android.widget.TextView[@text='" + text + "']");
         for (MobileElement element : mobileElementList) {
             if (element.getText().equals(text)) {
+                System.out.println("if calisti");
                 element.click();
-                break;
+            } else {
+                System.out.println("else calisti");
+                scrollWithUiScrollable(text);
             }
+            break;
         }
     }
 
@@ -77,6 +83,13 @@ public class ReusableMethods {
     public static void waitToBeClickable(MobileElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getAppiumDriver(), timeout);
         wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public static void scrollWithUiScrollable(String elementText) {
+        AndroidDriver driver = (AndroidDriver) Driver.getAppiumDriver();
+        driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\""+elementText+"\"))");
+        wait(5000);
+        tapOn((MobileElement) driver.findElementByAndroidUIAutomator("UiSelector().className(\"android.widget.TextView\").text(\""+elementText+"\")"));
     }
 
     public static void scrollDownToBeVisible(MobileElement element) {
