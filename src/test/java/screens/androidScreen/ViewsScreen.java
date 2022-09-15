@@ -21,4 +21,6 @@ public class ViewsScreen {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Switches']")
     public List<MobileElement> switchesButton;
 
+    @iOSX
+
 }
