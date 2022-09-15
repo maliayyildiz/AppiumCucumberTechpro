@@ -42,7 +42,7 @@ public class Driver {
                 appiumDriver = new AndroidDriver(appiumServerURL,desiredCapabilities);
             } else if (ConfigReader.getProperty("platformName").equals("ios")) {
                 //if you do not provide app path so you should use "bundleId"
-                desiredCapabilities.setCapability("bundleId",ConfigReader.getProperty("iosBundleId"));
+//                desiredCapabilities.setCapability("bundleId",ConfigReader.getProperty("iosBundleId"));
                 assert appiumServerURL != null;
                 appiumDriver = new IOSDriver(appiumServerURL,desiredCapabilities);
             } else {

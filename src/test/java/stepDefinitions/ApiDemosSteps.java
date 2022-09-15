@@ -135,9 +135,9 @@ public class ApiDemosSteps extends ReusableMethods {
 
     @Then("popup mesaji onayla")
     public void popupMesajiOnayla() {
-        System.out.println(screens.popupMenuScreen().popupMessage.getAttribute("name"));
-        isElementPresent(screens.popupMenuScreen().popupMessage);
-
+        String message = screens.popupMenuScreen().popupMessage.getAttribute("name");
+        Assert.assertTrue(message.contains("Search"));
+        System.out.println("tam mesaj = " + message);
     }
 
     @And("kullanici Search butununa tikladi")
