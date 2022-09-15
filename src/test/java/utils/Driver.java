@@ -29,7 +29,7 @@ public class Driver {
             desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, ConfigReader.getProperty("platformName"));
             desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, ConfigReader.getProperty("platformVersion"));
             desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, ConfigReader.getProperty("deviceName"));
-            desiredCapabilities.setCapability(MobileCapabilityType.APP, ConfigReader.getProperty("appPath"));
+//            desiredCapabilities.setCapability(MobileCapabilityType.APP, ConfigReader.getProperty("appPath"));
             desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, true);
             desiredCapabilities.setCapability("autoAcceptAlert",true);
             desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,"60000");
@@ -40,9 +40,9 @@ public class Driver {
             desiredCapabilities.setCapability("appActivity","");
                 assert appiumServerURL != null;
                 appiumDriver = new AndroidDriver(appiumServerURL,desiredCapabilities);
-            } else if (ConfigReader.getProperty("platformName").equals("ios")) {
+            } else if (ConfigReader.getProperty("platformName").equals("iOS")) {
                 //if you do not provide app path so you should use "bundleId"
-//                desiredCapabilities.setCapability("bundleId",ConfigReader.getProperty("iosBundleId"));
+                desiredCapabilities.setCapability("bundleId",ConfigReader.getProperty("iosBundleId"));
                 assert appiumServerURL != null;
                 appiumDriver = new IOSDriver(appiumServerURL,desiredCapabilities);
             } else {

@@ -1,6 +1,7 @@
 package screens;
 
 import screens.androidScreen.*;
+import screens.iosScreen.AlertViewScreen;
 
 public class Screens {
     public Screens() {
@@ -14,6 +15,14 @@ public class Screens {
     private DragAndDropScreen dragAndDropScreen;
     private DateWidgetsScreen dateWidgetsScreen;
     private PopupMenuScreen popupMenuScreen;
+    private AlertViewScreen alertViewScreen;
+
+    public AlertViewScreen alertViewScreen() {
+        if (alertViewScreen == null){
+            alertViewScreen = new AlertViewScreen();
+        }
+        return alertViewScreen;
+    }
 
     public PopupMenuScreen popupMenuScreen() {
         if (popupMenuScreen == null) {
