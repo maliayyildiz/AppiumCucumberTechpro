@@ -12,18 +12,18 @@ import java.util.List;
 public class ReusableMethods {
 
     public static void tapOnElementWithText(String text) {
-        wait(5000);
         List<MobileElement> mobileElementList = Driver.getAppiumDriver().findElementsByXPath("//android.widget.TextView[@text='" + text + "']");
         for (MobileElement element : mobileElementList) {
             if (element.getText().equals(text)) {
                 System.out.println("if calisti");
                 element.click();
+                break;
             } else {
-                System.out.println("else calisti");
                 scrollWithUiScrollable(text);
+                break;
             }
-            break;
         }
+
     }
 
     public static boolean isElementPresent(String text) {
