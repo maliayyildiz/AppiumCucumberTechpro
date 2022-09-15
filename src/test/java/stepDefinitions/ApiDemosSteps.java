@@ -162,6 +162,7 @@ public class ApiDemosSteps extends ReusableMethods {
                 Driver.getAppiumDriver().context("WEBVIEW");
             }
         }
+        //app haa Native bu yuzden teste devam edemedik
 
         System.out.println("son durum ====>" + Driver.getAppiumDriver().getContext());
 
