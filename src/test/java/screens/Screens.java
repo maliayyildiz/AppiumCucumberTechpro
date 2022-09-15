@@ -13,6 +13,14 @@ public class Screens {
     private ViewsScreen viewsScreen;
     private DragAndDropScreen dragAndDropScreen;
     private DateWidgetsScreen dateWidgetsScreen;
+    private PopupMenuScreen popupMenuScreen;
+
+    public PopupMenuScreen popupMenuScreen() {
+        if (popupMenuScreen == null) {
+            popupMenuScreen = new PopupMenuScreen();
+        }
+        return popupMenuScreen;
+    }
 
     public DateWidgetsScreen dateWidgetsScreen(){
         if (dateWidgetsScreen == null){
