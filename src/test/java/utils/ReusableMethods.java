@@ -18,16 +18,15 @@ public class ReusableMethods {
             for (MobileElement page: mobileElementList) {
                 if (page.getText().equals(text)){
                     page.click();
-                    break;
                 }else{
                     scrollWithUiScrollable(text);
-                    break;
                 }
+                break;
             }
         }
 
 //ikinci alternatif bir method
-        public static void clickOnPage1(String pageName) throws InterruptedException {
+        public static void clickOnElementWithText(String pageName) throws InterruptedException {
             Thread.sleep(4000);
             List<MobileElement> mobileElementList = Driver.getAppiumDriver().findElementsByXPath("//android.widget.TextView[@text='"+pageName+"']");
             if (mobileElementList.size()>0){
