@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.appium.java_client.MobileElement;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -7,6 +8,8 @@ import org.junit.Assert;
 import screens.Screens;
 import utils.Driver;
 import utils.ReusableMethods;
+
+import java.util.Set;
 
 public class ApiDemosSteps extends ReusableMethods {
     Screens screens = new Screens();
@@ -112,6 +115,7 @@ public class ApiDemosSteps extends ReusableMethods {
     @And("kullanici {string} butununa tikladi")
     public void kullaniciButununaTikladi(String text) {
         tapOnElementWithText(text);
+
     }
 
     @Then("kullanici {string} ekraninda")
@@ -122,5 +126,44 @@ public class ApiDemosSteps extends ReusableMethods {
     @And("{int} saniye bekle")
     public void saniyeBekle(int saniye) {
         wait(saniye);
+    }
+
+    @And("kullici make popup butonuna tikladi")
+    public void kulliciMakePopupButonunaTikladi() {
+        tapOn(screens.popupMenuScreen().makePopupButton);
+    }
+
+    @Then("popup mesaji onayla")
+    public void popupMesajiOnayla() {
+        System.out.println(screens.popupMenuScreen().popupMessage.getAttribute("name"));
+        isElementPresent(screens.popupMenuScreen().popupMessage);
+
+    }
+
+    @And("kullanici Search butununa tikladi")
+    public void kullaniciSearchButununaTikladi() {
+        tapOn(screens.popupMenuScreen().searchButton);
+//        wait(3);
+    }
+
+    @And("kullanici Webview butununa tikladi")
+    public void kullaniciWebviewButununaTikladi() {
+        System.out.println("webview tiklamada once ====>" + Driver.getAppiumDriver().getContext());
+
+        scrollWithUiScrollable("WebView");
+
+        System.out.println("webview tiklamada sonraki ====>" + Driver.getAppiumDriver().getContext());
+        Set<String> allContext = Driver.getAppiumDriver().getContextHandles();
+
+        wait(5);
+        for (String each : allContext) {
+            System.out.println(each);
+            if (each.contains("WEBVIEW")) {
+                Driver.getAppiumDriver().context("WEBVIEW");
+            }
+        }
+
+        System.out.println("son durum ====>" + Driver.getAppiumDriver().getContext());
+
     }
 }

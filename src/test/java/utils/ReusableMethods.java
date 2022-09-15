@@ -11,8 +11,6 @@ import java.util.List;
 
 public class ReusableMethods {
 
-
-
          public static void tapOnElementWithText(String text) {
             List<MobileElement> mobileElementList = Driver.getAppiumDriver().findElementsByClassName("android.widget.TextView");
             for (MobileElement page: mobileElementList) {
@@ -26,12 +24,12 @@ public class ReusableMethods {
         }
 
 //ikinci alternatif bir method
-        public static void clickOnElementWithText(String pageName) throws InterruptedException {
+        public static void clickOnElementWithText(String elementText) throws InterruptedException {
             Thread.sleep(4000);
-            List<MobileElement> mobileElementList = Driver.getAppiumDriver().findElementsByXPath("//android.widget.TextView[@text='"+pageName+"']");
+            List<MobileElement> mobileElementList = Driver.getAppiumDriver().findElementsByXPath("//android.widget.TextView[@text='"+elementText+"']");
             if (mobileElementList.size()>0){
                 mobileElementList.get(0).click();
-            }else scrollWithUiScrollable(pageName);
+            }else scrollWithUiScrollable(elementText);
         }
 
 
