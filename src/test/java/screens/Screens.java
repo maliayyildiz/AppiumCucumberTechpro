@@ -2,6 +2,8 @@ package screens;
 
 import screens.androidScreen.*;
 import screens.iosScreen.AlertViewScreen;
+import screens.iosScreen.PickerViewScreen;
+import screens.iosScreen.SwitchesiOSScreen;
 
 public class Screens {
     public Screens() {
@@ -16,6 +18,22 @@ public class Screens {
     private DateWidgetsScreen dateWidgetsScreen;
     private PopupMenuScreen popupMenuScreen;
     private AlertViewScreen alertViewScreen;
+    private PickerViewScreen pickerViewScreen;
+    private SwitchesiOSScreen switchesiOSScreen;
+
+    public SwitchesiOSScreen switchesiOSScreen() {
+        if (switchesiOSScreen == null) {
+            switchesiOSScreen = new SwitchesiOSScreen();
+        }
+        return switchesiOSScreen;
+    }
+
+    public PickerViewScreen pickerViewScreen() {
+        if (pickerViewScreen == null) {
+            pickerViewScreen = new PickerViewScreen();
+        }
+        return pickerViewScreen;
+    }
 
     public AlertViewScreen alertViewScreen() {
         if (alertViewScreen == null){

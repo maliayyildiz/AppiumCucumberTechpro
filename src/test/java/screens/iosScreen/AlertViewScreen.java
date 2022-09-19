@@ -23,5 +23,15 @@ public class AlertViewScreen {
     @iOSXCUITFindBy(accessibility = "OK")
     public MobileElement okButton;
 
+    @iOSXCUITFindBy(iOSNsPredicate = "label == \"Okay / Cancel\"")
+    public MobileElement okCancelButton;
 
+    @iOSXCUITFindBy(iOSClassChain = "**/XCUIElementTypeStaticText[`label == \"Picker View\"`]")
+    public MobileElement pickerViewButton;
+
+    @iOSXCUITFindBy(iOSClassChain = "**/XCUIElementTypeStaticText[`label == \"Switches\"`]")
+    public MobileElement switchesButton;
+
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"Switches\"]")
+    public MobileElement switchesTitle;
 }
